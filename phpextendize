@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+require "fileutils"
+require "optparse"
+
+#options setup
+options = {:help => true, :version => "5.6.10", :verbose => false, :path => "/Applications/MAMP/"}
+opt_parser = OptionParser.new do |opts|
+    opts.banner = "Usage: COMMAND MyNewPHPExtension [options]"
+    opts.separator ""
+    opts.separator "Commands"
+    opts.separator " create: create new PHP extension project"
+    opts.separator ""
+    opts.separator "MyNewPHPExtension"
+    opts.separator " enter name of project"
+    opts.separator ""
+    opts.separator "options"
+    opts.separator " version, path, verbosity, help"
+    opts.on("-version", "version of PHP to create extension for (default 5.6.10)") do
+        options.version = "10"
+    end
+    opts.on("-path", "path of PHP installation (default to /Applications/MAMP/)") do
+        options.path = "~/"
+    end
+    opts.on("-v", "--v", "--verbose", "verbose: show details of installation") do
+        options.verbose = true
+    end
+    opts.on("-h", "--h", "--help", "help: display this help page") do
+        puts opt_parser
+    end
+end
+
+#opt_parser.parse!
+
+case ARGV[0]
+when "create"
+    puts "creating..."
+when "Create"
+    puts "creating..."
+else
+    puts opt_parser
+end
