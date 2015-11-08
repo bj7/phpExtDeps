@@ -1,2 +1,2 @@
-# phpExtDeps
-PHP extension dependency manager
+# phpextendize
+PHP extension dependency manager and project creator
